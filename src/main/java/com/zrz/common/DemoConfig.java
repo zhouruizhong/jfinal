@@ -2,7 +2,6 @@ package com.zrz.common;
 
 import com.zrz.blog.BlogController;
 import com.zrz.common.model._MappingKit;
-import com.zrz.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
 import com.jfinal.config.Interceptors;
@@ -15,6 +14,7 @@ import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
+import com.zrz.controller.IndexController;
 
 /**
  * 本 仅表达最为粗浅的 jfinal 用法，更为有价值的实用的企业级用法
