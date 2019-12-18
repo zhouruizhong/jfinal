@@ -1,6 +1,5 @@
 package com.zrz.common;
 
-import com.zrz.blog.BlogController;
 import com.zrz.common.model._MappingKit;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -15,6 +14,9 @@ import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.server.undertow.UndertowServer;
 import com.jfinal.template.Engine;
 import com.zrz.controller.IndexController;
+import com.zrz.interceptor.GlobalActionInterceptor;
+import com.zrz.routes.AdminRoutes;
+import com.zrz.routes.FrontRoutes;
 
 /**
  * 本 仅表达最为粗浅的 jfinal 用法，更为有价值的实用的企业级用法
@@ -67,10 +69,8 @@ public class DemoConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configRoute(Routes me) {
-		// 第三个参数为该Controller的视图存放路径
-		me.add("/", IndexController.class, "/index");
-		// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
-		me.add("/blog", BlogController.class);
+		me.add(new FrontRoutes());
+		me.add(new AdminRoutes());
 	}
 
 	@Override
@@ -106,7 +106,7 @@ public class DemoConfig extends JFinalConfig {
 	 */
 	@Override
 	public void configInterceptor(Interceptors me) {
-
+        me.add(new GlobalActionInterceptor());
 	}
 
 	/**

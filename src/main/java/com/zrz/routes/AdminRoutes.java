@@ -10,7 +10,7 @@ public class AdminRoutes extends Routes {
 
     @Override
     public void config() {
-        setBaseViewPath("/view/admin");
+        //setBaseViewPath("/view/admin");
         addInterceptor(new AdminInterceptor());
         add("/admin", AdminController.class);
         add("/admin/user", UserController.class);

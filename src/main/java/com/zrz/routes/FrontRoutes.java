@@ -12,7 +12,7 @@ public class FrontRoutes extends Routes {
         // 这里配置只对 FrontRoutes 下的路由有效，建议这样配置以提升性能
         setMappingSuperClass(true);
 
-        setBaseViewPath("/view/front");
+        //setBaseViewPath("/view/front");
         add("/", IndexController.class);
         add("/blog", BlogController.class);
         add("/weixin", WeixinController.class);
